@@ -1,0 +1,3 @@
+cat cat CAT
+
+dog DOG DOG!

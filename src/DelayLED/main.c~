@@ -1,0 +1,58 @@
+/*
+ *
+ */
+
+#include <stdio.h>
+#include <stdbool.h>
+#include "led.h"
+#include "delay.h"
+#include "pushbutton.h"
+
+int main() {
+	const unsigned long int delayCount = 0x4ffff;
+	bool orange = true;
+	bool yellow = false;
+	bool green = false;
+	bool blue = false;
+
+	printf("Pushbutton Delay Project Starting\n");
+	
+	/* Initialize all of the LEDs */
+	ledInitAll();
+	/* Initialize both of the pushbuttons */
+	pushbuttonInitAll();
+	/* turn on orange LED */
+	ledOrangeOn();
+
+	while(1) {
+		if(sw1In()) {
+			if(orange){
+				ledOrangeOff();
+				ledYellowOn();
+				orange = false;
+				yellow = true;
+			}else if(yellow){
+				ledYellowOff();
+				ledGreenOn();
+				yellow = false;
+				green = true;
+			} else if(green){
+				ledGreenOff();
+				ledBlueOn();
+				green = false;
+				blue = true;
+			}else {
+				ledBlueOff();
+				ledOrangeOn();
+				blue = false;
+				orange = true;
+			}
+		}
+		delay(delayCount);
+	}
+	
+	printf("Pushbutton Delay Project Completed\n");
+
+	return 0;
+}
+

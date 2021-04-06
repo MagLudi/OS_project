@@ -1,0 +1,8 @@
+Lines: 3
+Words: 6
+Word count: 
+  CAT: 1
+  DOG: 1
+  DOG!: 1
+  cat: 2
+  dog: 1

@@ -1,0 +1,95 @@
+Last revised 4-Sep-18
+
+			    Problem Set 0
+
+		 Harvard Extension School CSCI E-92:
+	     Principles of Operating Systems - Fall 2018
+
+		  Due: September 9, 2018 at Midnight
+
+This problem set requires several different activites to be completed
+as detailed below:
+  o  A GitHub account needs to be established.
+  o  A HarvardKey account needs to be established.
+  o  A GitHub CSCI E-92 repository needs to be established.
+  o  Successful login to nice.fas.harvard.edu needs to be verified.
+  o  git needs to be installed on computers on which you'll be
+     developing code.
+  o  The course questionnaire needs to be completed.
+  o  The fix-this-program.c needs to be corrected so that it builds
+     and runs correctly on nice.fas.harvard.edu.
+  o  word-count.c needs to be written and tested so that it builds and
+     runs correctly on nice.fas.harvard.edu..
+  o  The questionnaire, corrected fix-this-program.c, and word-count.c
+     need to be submitted to your GitHub repository.
+
+Unlike all other Problem Sets, additional partial credit will *not* be
+awarded for corrections made after this problem set has been
+submitted.  The total number of points for Problem Set 0 is 20 points.
+
+1. (5 Points) Follow the directions given in the section web site at
+  http://sites.fas.harvard.edu/~libe251/fall2018/section/index.html
+  to: (1) create a repository on https://github.com/ which is a clone
+  of the CSCI E-92 sample code repository, (2) install git on your
+  computers on which you'll be developing code, and (3) create a
+  branch, (4) complete the course questionnaire, (5) on the nice
+  computers, use make to build
+  src/fix-this-program/c/fix-this-program.c using the C Programming
+  Language; *without* changing the corresponding makefile, create a
+  branch for problem-set-0, modify the appropriate source file to
+  allow it to build without any warnings or errors on the nice
+  computers, (6) also on the nice computers, write a program named
+  word-count.c in C to accomplish the tasks given in part 2 below in
+  this PS0, (7) commit your filled-in questionnaire, corrected
+  fix-this-program.c, and the word-count.c program, push the branch,
+  create a pull request, add a comment with the text:
+
+    @frankelharvard @massfords @stbenjam
+
+  and accept the pull request.
+
+  Tasks 1 through 5 above (considered together) are worth 5 points.
+  Task 6 (writing and testing word-count.c) is worth 15 points.
+
+  The course questionnaire is available in the sample code repository
+  at doc/Questionnaire.txt.
+
+  fix-this-program.c is available in the sample code repository at
+  src/fix-this-program/c/fix-this-program.c.
+
+2. (15 Points) Write a program named word-count.c in C, that uses file
+  I/O to read a text file whose name is specified on the command line
+  to the program.  The program will parse the input file into words
+  and will use a data structure of your choice to keep track of the
+  number of occurrences of each unique word that is found in the input
+  file.  Words will be delimited by white space which for our purposes
+  is defined to be any mix of spaces (' '), horizontal tabs ('\t'), or
+  newlines ('\n') -- including multiple occurrences of white space.
+  You are welcome to include a carriage-return ('\r') as another white
+  space character -- this facilitates code development on Windows
+  computers.  Lines are delimited by a newline character (or
+  additionally and optionally for development on Windows computers, by
+  a carriage-return immediately followed by a linefeed).  No other
+  characters should be treated specially (i.e., punctuation, hyphens,
+  etc. should just be considered as non-white-space characters that
+  should be treated as part of words).  Do not convert the case of
+  letters (e.g., your program should consider the words "case" and
+  "Case" to be different words).  Upon reaching end-of-file, the
+  program will output to stdout: (1) the number of lines in the input
+  file (include blank lines in the count of the number of lines), (2)
+  the total number of words in the input file (*not* the number of
+  unique words), (3) a list of each unique word in the input file
+  along with the number of times that word appears in the file.  The
+  list of unique words need not be sorted in any particular order.
+  Your solution must compile and execute correctly on the nice
+  computers.  Remember to include a makefile to complete the build.
+
+  Depending on your programming experience, you should choose an
+  appropriate data structure in which the words and word counts are
+  stored.  Although not worthy of full credit, using an array of fixed
+  size is acceptable.  Using a linked list -- perhaps sorted in
+  alphabetical order -- would be worthy of full credit even though the
+  performance of searching and inserting into a linked list may be
+  inefficient.  Do not spend your time implementing a more efficient
+  solution unless you are sure that you can complete this problem set
+  on time.

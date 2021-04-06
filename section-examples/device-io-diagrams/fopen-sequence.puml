@@ -1,0 +1,12 @@
+@startuml
+
+command -> sys_io : fopen("/dev/led/blue", "rw")
+sys_io -> files : findByName("/dev/led/blue")
+sys_io -> devices : findByDeviceId(file.majorId)
+sys_io -> sys_io : convertToMode("rw")
+sys_io -> device : device.fopen(file.minorId, mode)
+sys_io -> processes : int saveOpenStream(struct stream*)
+sys_io --> command : return int to caller
+
+
+@enduml

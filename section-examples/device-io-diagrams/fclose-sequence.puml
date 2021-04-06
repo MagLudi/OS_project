@@ -1,0 +1,11 @@
+@startuml
+
+command -> sys_io : fclose(7)
+sys_io -> processes : findOpenStream(7)
+sys_io -> devices : findByDeviceId(stream.majorId)
+sys_io -> device : device.fclose(stream)
+sys_io -> processes : removeOpenStream(7)
+sys_io --> command : return int to caller
+
+
+@enduml

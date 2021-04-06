@@ -1,0 +1,54 @@
+1. Multiprogramming is the rapid switching of the CPU between two or more processes in memory. It's often used to keep the CPU busy while one or more processes are using I/0. However, it is usually used to reduce the overall wait time of handling a batch of processes.
+
+2.
+    a. Should only run in kernel mode. Running it in user mode could result in malfunctions due to hardware events not being serviced when needed since there wouldn't be any guaranty that the scheduler will be notified when the time slice ends.
+    b. Doesn't need to run in kernel mode since it isn't a privileged operation and won't change the state of other processes.
+    c. Should only run in kernel mode. Running it in user mode would make the clock shared and result in it becoming unreliable.
+    d. Should only run in kernel mode. Changing it in user mode runs not only the risk of corrupting data in the kernel memory, but the data also in the memory of other processes.
+
+3. No. With priority scheduling, L will never get the chance to run at all because of H. However with round robin, both H and L will get time slices to run. These time slices will force H to temporarily stop and let L run. With this method, L will eventually complete its task.
+
+4. To do a semaphore operating, the interrupts need to be disabled by the operating system. Then it checks to see if the value of the semaphore value is 0. If it is and it is doing a Down, the interrupt gets enabled. If not, it then checks to see if it is doing an Up and if there is at least one blocked process. If so, then a blocked process gets removed and is made runnable. This continues until interrupts are enabled.
+
+    S = semaphore, BP = number of blocked processes
+
+    loop: Disable interrupt {
+	if Down && S == 0{
+	    Enable interrupt
+	} else if Up and BP >= 1{
+	    remove a blocked process and make runnable
+	}
+    }
+
+5. For each counting semaphore are two binary semaphores (one for mutual exclusion [ME] and another for blocking [B]), a list of blocked processes (L), and a counter representing the number of Ups minus the number of Downs.
+
+   To implement Down, a Down is done on ME followed by a counter decrement. If the counter is less than 0, the process gets added to L. Then an Up is done on ME, followed by a down on B. If the counter is greater than 0, then is simply does an up on ME.
+
+   Io implement Up, a Down is done on ME followed by a counter increment. If the counter is less than or equal to zero then a process is removed from L and an Up performed on B. Finally, an up is done on M.
+
+    BS = Binary Semaphore (ME, B), i = integer counter, L is the list of processes blocked
+
+    ME = 1
+    B = 0
+    i is set to the initial value of the counting semaphore
+
+    Down:
+	Down ME
+	i--
+	if i < 0{
+	    Add process to L
+	    Up ME
+	    Down B
+	} else{
+	    Up ME
+	}
+
+    Up:
+	Down ME
+	i++
+	if i <= 0{
+	    Remove a process from L
+	    Up B
+	}
+	Up ME
+

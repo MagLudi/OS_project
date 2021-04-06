@@ -1,0 +1,10 @@
+@startuml
+
+command -> sys_io : fputc('a', 7)
+sys_io -> processes : findOpenStream(7)
+sys_io -> devices : findByDeviceId(stream.majorId)
+sys_io -> device : device.fputc('a', stream)
+sys_io --> command : return int to caller
+
+
+@enduml

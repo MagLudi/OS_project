@@ -1,0 +1,33 @@
+1.
+  a. The two computers, (A) DEC Alpha and (B) IBM System/360 use different character encoding schemes. Machine A uses ASCII to display the character string as an integer, while B uses EBCDIC. Not only EBCDIC encoding has different order (e.g. letters before numbers, and lower case before uppercase), it also groups letters in blocks of 9, with other non-letter characters filling the gaps. Also, ASCII encodes its characters (128) into 7 bit integers, with the 8th bit sometimes used for parity, while EBCDIC uses all 8 bits. Due to the ordering difference, any argument that is passed in on these machines will result in different outputs.
+
+  b. The two arguments are "more" and "less". To figure that outa simple 'reverse' program was written:
+
+  #include <stdio.h>
+  #include <stdlib.h>
+
+  int main(int argc, char *argv[]) {
+    union {
+      int number;
+      char string[sizeof(int) + 1];
+    } n;
+
+    n.string[sizeof(int)] = '\0';
+    n.number =atoi(argv[1]);
+    printf("\n%s",n.string);
+    return 0;
+  } 
+
+  c. Computer B. The value for "more", the argv[1] value, is bigger so the boolean check will recorded as false. Therefore, the resulting print statement will correctly say that "more" comes after "less" alphabetically. Computer A, however, has a smaller value for "more", so it's print statement will incorrectly claim that the opposite is true.
+
+2.
+  a. 20 MB, 10 MB, and 18 MB
+  b. 12 MB, 10 MB, and 9 MB
+  c. 20 MB, 18 MB, and 15 MB
+  d. 20 MB, 18 MB, and 9 MB
+
+3.
+  a. Page 2
+  b. Page 3
+  c. Page 1
+  d. Page 2

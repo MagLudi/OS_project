@@ -1,0 +1,117 @@
+			Last revised 24-Jul-18
+
+			  Questionnaire for
+
+		 Harvard Extension School CSCI E-92:
+	     Principles of Operating Systems - Fall 2018
+
+
+Name: Anna Levin		Home/Cellular phone number: 908 161 5801
+
+
+E-mail:	anna.e.levin@gmail.com	Work phone number: NA
+
+
+Where are you located?  What is your time zone?
+
+Somerville MA, EST
+
+So that we can meet on-line, if necessary, what is your Skype name
+and/or your Google Hangouts name?
+
+My Skype name is Anna Levin. My Google Hangouts name is Magister Ludi.
+
+Occupation (If an undergraduate student, please specify your major and
+year and at which school; If a graduate student, please specify your
+department, field, and year and at which school).
+
+Graduate student of the Harvard Extension School.
+Currently working towards my masters in Software Engineering.
+
+Are you currently enrolled in a degree program?
+
+Yes
+
+Have you taken:
+  CSCI E-10a (Formerly CSCI E-50a) (Introduction to Computer Science
+      Using Java I),
+  CSCI E-10b (Formerly CSCI E-50b) (Introduction to Computer Science
+      Using Java II),
+  CSCI E-50 (Formerly CSCI E-52) (Intensive Introduction to Computer
+      Science),
+  CSCI E-28 (Formerly CSCI E-215) (Unix/Linux Systems Programming),
+  CSCI E-124 (Data Structures and Algorithms),
+  or equivalents
+(specify which)?
+
+I have not, but for most of these classes I have taken the equivalent as either
+an undergrad and/or on Coursera.
+
+Have you taken CSCI E-22 (Formerly CSCI E-119) (Data Structures)?
+
+	If not, how do you meet the prerequisite?
+
+No, but I have taken it as an undergrad.
+
+Do you have experience using Unix?  Do you have experience programming
+using Unix system calls?  If yes, please describe.  If not, how do you
+meet the prerequisite?
+
+No. However I have access to several resources.
+
+Are you already registered for this class?  -- If not, do you intend
+to register?  Also, are you registered as a distance student?  Do you
+intend to attend classes in person?
+
+I'm registered and will attend the class in person.
+
+If you are a distance student, have you already ordered and/or
+received the Freescale K70 development modules (TWR-K70F120M-KIT
+(which includes TWR-K70F120M, TWR-SER, TWR-ELEV) and the TWR-LCD-RGB)?
+Note: If the TWR-K70F120M-KIT is not available, the individual
+components should be ordered.
+
+I plan to borrow one of the kits in class.
+
+
+Are you taking the course for undergraduate credit, graduate credit,
+or noncredit?
+
+Graduate credit.
+
+
+What additional appropriate course or work experience do you have?
+
+I have done a programing internship with Critical Architectures LLC, have done personal
+projects, and have taken several programming classes where an understanding of data structures
+was needed.
+
+What is your math background?
+
+Studied calculus and differential equations.
+
+What computer languages do you know (please include assembler and
+high-level languages)?  Have you programmed in the C Programming
+Language, C++, or Java?
+
+Java, C/C++, OCamle, R, Yacc, Lex, Mips
+
+What operating systems have you used (e.g. Windows, Mac OS, Linux,
+iOS, Android, etc.)?
+
+Linux
+
+What computers have you used (i.e., which machine language instruction
+sets)?
+
+Mips
+
+Why are you taking the course?
+
+Because I am very much interested in the subject and would like to expand my understanding of operating systems.
+
+If the class needs to be rescheduled, is Thursday evening acceptable?
+
+Yes
+
+Other comments:

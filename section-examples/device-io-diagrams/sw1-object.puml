@@ -1,0 +1,29 @@
+@startuml
+
+object File {
+    name : "/dev/buttons/sw1"
+    majorId : 7
+    minorId : 1
+}
+
+
+object Device {
+    majorId : 7
+    fopen : fopen_btn(int minorId, int mode)
+    fclose : fclose_btn(struct stream *)
+    fgetc : fgetc_btn(struct stream *)
+    fputc : fputc_btn(int c, struct stream *)
+}
+
+object Stream {
+    majorId : 7
+    minorId : 1
+    pos : 0
+    mode : 1
+}
+
+File .> Device : via majorId
+Device .> Stream : creates
+
+
+@enduml

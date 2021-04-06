@@ -1,0 +1,29 @@
+@startuml
+
+object File {
+    name : "/dev/led/blue"
+    majorId : 42
+    minorId : 1
+}
+
+
+object Device {
+    majorId : 42
+    fopen : fopen_led(int minorId, int mode)
+    fclose : fclose_led(struct stream *)
+    fgetc : fgetc_led(struct stream *)
+    fputc : fputc_led(int c, struct stream *)
+}
+
+object Stream {
+    majorId : 42
+    minorId : 1
+    pos : 0
+    mode : 1
+}
+
+File .> Device : via majorId
+Device ..> Stream : creates
+
+
+@enduml

@@ -1,0 +1,59 @@
+@startuml
+
+
+object File {
+    name : "/myFile.txt"
+    majorId : 1
+    minorId : 86
+}
+
+
+object Device {
+    majorId : 1
+    fopen : fopen_fs(int minorId, int mode)
+    fclose : fclose_fs(struct stream *)
+    fgetc : fgetc_fs(struct stream *)
+    fputc : fputc_fs(int c, struct stream *)
+}
+
+object Stream {
+    majorId : 1
+    minorId : 86
+    pos : 0
+    mode : 1
+}
+
+package FileSystem {
+    object "iNode" as iNodeHead
+    object "iNode" as iNodeTail
+    object "iNode" as iNodeFree
+
+    object iNodeHead {
+        minorId : 86
+        free: false
+        char[NODE_SIZE] data
+    }
+
+    object iNodeTail {
+        minorId : 200
+        free: false
+        char[NODE_SIZE] data
+    }
+
+    object iNodeFree {
+        minorId : 101
+        free: true
+        char[NODE_SIZE] data
+    }
+}
+
+
+
+File .> Device : via majorId
+Device .> Stream : creates
+iNodeHead .> iNodeTail : next
+File ..> iNodeHead : minorId
+Stream ..> iNodeHead : minorId
+
+
+@enduml
